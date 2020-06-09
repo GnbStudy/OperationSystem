@@ -1,14 +1,14 @@
 Interprocess Communication (IPC).pdf 로 공부할 것.<br>
 
-목차<br>
+# 목차<br>
 1. 2주차목표
 2. 학습내용
 3. 학습 방법 안내
 
-[ 2주차목표 ]<br>
-Interprocess Communication (IPC)에 대해 이해하고, Sared memory, Message queues, Pipe, Mailbox에 대해 알아본다.<br>
+# [ 2주차목표 ]<br>
+## Interprocess Communication (IPC)에 대해 이해하고, Sared memory, Message queues, Pipe, Mailbox에 대해 알아본다.<br>
 
-[ 학습내용 preview ]<br>
+# [ 학습내용 preview ]<br>
  스터디원 중 한 명이 message queue에 대해 궁금해하여 이에 대한 내용으로 스터디를 준비하였다.<br>
  우선 message queue에 넘어가기에 앞서 Interprocess Communication (IPC)에 대해 알아야 했다. IPC란 완전히 독립된 두 프로세스가 있을 때 A가 B에게 B가 A에게 데이터를 전달하는 것을 말한다. 근데 여기서 단순히 보내고 받는 것만 생각하기 쉬운데, IPC는 메모리 공유 기법을 통해 send와 read가 이루어짐을 알아야 한다.<br>
  간단한 듯 보이지만 우리가 IPC를 어려워하는 이유는, kernel이 process 영역을 분리시켜서, 영역 외의 영역엔 접근이 불가능하기 때문이다. 단순하게 메모리 공유 방법을 생각해보면 process A의 data영역에 process B의 접근을 허용하는 영역을 만든 다음 그 영역에 A가 data를 보내면 B가 받아가서 쓰는 걸 생각할 수 있지만, OS에서 제한하고 있기 때문에 IPC가 어려운 것. 그래서 이에 대한 해결책도 OS가 제공하면 된다. 이러한 것을 IPC기법이라고 한다.<br>
@@ -23,7 +23,7 @@ Shared memory는 두 프로세스간 공유된 메모리를 생성한 후 이용
 마지막으로 mailbox에 대해 다루며 스터디를 마무리 하였다. 간단하게 원리를 설명하자면 앞에서 말했듯이 프로세스는 자신에게 할당된 메모리 공간 이외에는 접근할 수가 없다. 따라서 mail slot(우체통)을 이용하여 데이터를 송,수신 할 수 있다. 데이터를 수신하고자 하는 process A가 mail slot을 생성한다. 그리고 데이터를 송신하고자 하는 process B가 process A의 mail slot의 주소로 데이터를 송신한다. 그 후 process A가 자신의 mail slot을 통해 데이터를 얻게 된다.<br>
 
 
-[ 학습자료파일 ]<br>
+# [ 학습자료파일 ]<br>
 ⊙ 위의 학습내용에 대한 학습자료는 Interprocess Communication (IPC).pdf 파일을 참고하면 된다.<br>
 ⊙ 위의 pdf 파일 안에 pipe 예제도 포함되어 있으니, 참고해서 해볼 것.<br>
 ⊙ 위의 pdf 파일을 만드는데 이용한 자료들의 출처도 남기겠다.<br>
